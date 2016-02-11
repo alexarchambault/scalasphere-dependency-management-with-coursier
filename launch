@@ -3,12 +3,21 @@
 VERSION=0.4.0-M3-replesent
 SCALA_VERSION=2.11.7
 
+CREATE='val replesent = new REPLesent(sys.props("user.home") + "/projects/REPLesent/REPLesent.txt")'
+IMPORT='import replesent._'
 PREDEF='
 classpath.add("org.scala-lang" % "scala-compiler" % "2.11.7")
 classpath.addPath(sys.props("user.home") + "/projects/REPLesent/target/scala-2.11/classes")
 
-val replesent = new REPLesent(sys.props("user.home") + "/projects/REPLesent/REPLesent.txt")
-import replesent._
+'"$CREATE"'
+'"$IMPORT"'
+
+def reload(implicit eval: ammonite.api.Eval): Unit = {
+  eval("""'"$CREATE"'""")
+  eval("""'"$IMPORT"'""")
+}
+
+def r(implicit eval: ammonite.api.Eval): Unit = reload
 '
 
 exec "$(dirname "$0")/coursier" launch \
@@ -16,4 +25,5 @@ exec "$(dirname "$0")/coursier" launch \
   -I ammonium-compile:com.github.alexarchambault.ammonium:shell-api_$SCALA_VERSION:$VERSION \
   -I ammonium-macro:org.scala-lang:scala-compiler:$SCALA_VERSION \
   -i ammonium-compile,ammonium-macro \
+  --checksum none \
   -- -- --predef="$PREDEF" "$@"

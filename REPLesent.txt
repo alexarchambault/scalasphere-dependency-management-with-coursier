@@ -3,8 +3,87 @@
 
 | \bhttps://github.com/alexarchambault/coursier\s
 
+--
+
+- Library to resolve and fetch Ivy / Maven dependencies
+
+- More flexible API -> break the chains of Ivy or Aether!
+
 ---
 
-About me
+| About me
 
+- Alexandre Archambault
 
+- Doing Scala professionally since 2013
+- Contributing to shapeless for 1.5 year
+
+- Software engineer / data scientist at \b\*Teads.tv\s
+
+- Twitter @alxarchambault, Github @alexarchambault
+
+---
+
+| \b\*Teads.tv\s
+
+- Native video advertising
+- Deals with lots of publishers
+- Reaches 100M users / day, and growing
+
+- Back-end entirelly in Scala
+- 1/2 of their ~70 developers doing Scala
+- Machine learning, Spark, Mesos, ...
+
+---
+
+| Needed dependency management to
+
+- Distribute an application
+
+- Allow users to add dependencies on-the-fly in it (REPL style)
+
+--
+
+- conscript
+--
+- SBT as a library
+---
+
+:disappointed:
+
+- conscript: degraded dependency handling of SBT
+- SBT as a library: hard to re-use or do fancy things with it
+
+- plus no parallel downloads, poor progress reporting, ...
+--
+
+- dependency resolution not that big a deal,
+  no need to go hoops and loops for that
+
+---
+
+| \gcoursier\s
+
+- very-very core: resolution
+    ~500 SLOC (its first versions)
+    written a bit in anger mid 2015
+
+- remaining: mid 2015
+             significant additions end of 2015
+
+- API: mainly a bunch of case classes / ADTs,
+       along with monad-wrapped IO
+
+--
+| DEMO: API
+
+https://github.com/alexarchambault/coursier#api
+
+---
+| DEMO: SBT plugin
+
+---
+| DEMO: CLI
+
+- launch an app
+- fetch things / give a classpath
