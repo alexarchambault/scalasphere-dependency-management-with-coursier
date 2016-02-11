@@ -13,14 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-case class REPLesent(
-  width: Int = 0
+
+import ammonite.api.Eval
+
+class REPLesent(
+  input: String = "REPLesent.txt"
+, width: Int = 0
 , height: Int = 0
-, input: String = "REPLesent.txt"
 , slideCounter: Boolean = false
 , slideTotal: Boolean = false
-, intp: scala.tools.nsc.interpreter.IMain = null
-) {
+)(implicit eval: Eval) {
   import scala.util.Try
 
   private case class Config(
@@ -340,12 +342,11 @@ case class REPLesent(
     def runCode: Unit = {
       val code = currentSlide.code(buildCursor)
 
-      if (repl.isEmpty) {
-        Console.err.print(s"No reference to REPL found. Please call with parameter intp=$$intp")
-      } else if (code.isEmpty) {
+      if (code.isEmpty) {
         Console.err.print("No code for you")
       } else {
-        repl foreach (_.interpret(code))
+        eval(code)
+        ()
       }
     }
   }
@@ -365,8 +366,6 @@ case class REPLesent(
     |  run           r      !!    execute code that appears on slide
     |  blank         b            blank screen
     |  help          h      ?     print this help message""".stripMargin
-
-  private val repl = Option(intp)
 
   private val deck = Deck(parseFile(input))
 
@@ -514,7 +513,7 @@ case class REPLesent(
     if (build.isEmpty) Console.err.print("No slide for you")
 
     build foreach { b =>
-      print(render(b))
+      print(render(b) + "\n")
     }
   }
 

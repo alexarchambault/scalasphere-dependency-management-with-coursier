@@ -1,0 +1,19 @@
+#!/bin/bash
+
+VERSION=0.4.0-M3-replesent
+SCALA_VERSION=2.11.7
+
+PREDEF='
+classpath.add("org.scala-lang" % "scala-compiler" % "2.11.7")
+classpath.addPath(sys.props("user.home") + "/projects/REPLesent/target/scala-2.11/classes")
+
+val replesent = new REPLesent(sys.props("user.home") + "/projects/REPLesent/REPLesent.txt")
+import replesent._
+'
+
+exec "$(dirname "$0")/coursier" launch \
+  com.github.alexarchambault.ammonium:shell_$SCALA_VERSION:$VERSION \
+  -I ammonium-compile:com.github.alexarchambault.ammonium:shell-api_$SCALA_VERSION:$VERSION \
+  -I ammonium-macro:org.scala-lang:scala-compiler:$SCALA_VERSION \
+  -i ammonium-compile,ammonium-macro \
+  -- -- --predef="$PREDEF" "$@"

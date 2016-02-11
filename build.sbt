@@ -79,6 +79,7 @@ unsound-match              Pattern match may not be typesafe
 libraryDependencies ++= Seq(
     "org.scala-lang"  % "scala-compiler" % "2.11.7" % Compile
   , "org.scalatest"  %% "scalatest"      % "2.2.6"  % Test
+  , "com.github.alexarchambault.ammonium" % "interpreter-api" % "0.4.0-M3" cross CrossVersion.full
 )
 
 // Improved incremental compilation
