@@ -3,6 +3,8 @@
 VERSION=0.4.0-M3-replesent
 SCALA_VERSION=2.11.7
 
+export COURSIER_CACHE="$(cd "$(dirname "$0")"; pwd)/.cache"
+
 CREATE='val replesent = new REPLesent(sys.props("user.home") + "/projects/REPLesent/REPLesent.txt")'
 IMPORT='import replesent._'
 PREDEF='
