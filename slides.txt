@@ -74,18 +74,17 @@
        along with monad-wrapped IO
 
 ---
-| DEMO: API
+\gAPI\s
 
-https://github.com/alexarchambault/coursier#api
+  https://github.com/alexarchambault/coursier#api
 
----
-| DEMO: SBT plugin
+\gSBT plugin\s
 
----
-| DEMO: CLI
+  https://github.com/alexarchambault/coursier#sbt-plugin
 
-- launch an app
-- fetch things / give a classpath
+\gCommand-line\s
+
+  https://github.com/alexarchambault/coursier#command-line
 
 ---
 | Questions?
