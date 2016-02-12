@@ -3,11 +3,10 @@
 
 | \bhttps://github.com/alexarchambault/coursier\s
 
---
-
 - Library to resolve and fetch Ivy / Maven dependencies
 
-- More flexible API -> break the chains of Ivy or Aether!
+- Rewritten from scratch
+  Break the chains of Ivy or Aether!
 
 ---
 
@@ -15,7 +14,7 @@
 
 - Alexandre Archambault
 
-- Doing Scala professionally since 2013
+- Doing Scala since 2013
 - Contributing to shapeless for 1.5 year
 
 - Software engineer / data scientist at \b\*Teads.tv\s
@@ -30,7 +29,7 @@
 - Deals with lots of publishers
 - Reaches 100M users / day, and growing
 
-- Back-end entirelly in Scala
+- Back-end entirely in Scala
 - 1/2 of their ~70 developers doing Scala
 - Machine learning, Spark, Mesos, ...
 
