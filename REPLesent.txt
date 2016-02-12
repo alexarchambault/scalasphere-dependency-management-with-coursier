@@ -74,7 +74,7 @@
 - API: mainly a bunch of case classes / ADTs,
        along with monad-wrapped IO
 
---
+---
 | DEMO: API
 
 https://github.com/alexarchambault/coursier#api
@@ -87,3 +87,6 @@ https://github.com/alexarchambault/coursier#api
 
 - launch an app
 - fetch things / give a classpath
+
+---
+| Questions?
