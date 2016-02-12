@@ -33,3 +33,5 @@ tmp/
 # Windows
 Desktop.ini
 Thumbs.db
+
+.coursier-cache/
