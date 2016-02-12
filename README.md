@@ -6,6 +6,8 @@ $ cd scalasphere-dependency-management-with-coursier
 $ ./launch
 ```
 
+Compiles and caches a bunch of things on first launch.
+
 Type `n`, Enter to go to the next slide, or `p`, Enter, to go back.
 
 Type Ctrl+D, or `q`, Enter, to exit.
