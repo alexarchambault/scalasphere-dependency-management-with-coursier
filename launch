@@ -30,6 +30,8 @@ def reload(implicit eval: ammonite.api.Eval): Unit = {
 def r(implicit eval: ammonite.api.Eval): Unit = reload
 
 def q = exit
+
+f
 '
 
 echo "$PREDEF"

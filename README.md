@@ -6,7 +6,6 @@ $ cd scalasphere-dependency-management-with-coursier
 $ ./launch
 ```
 
-Then type `f` then Enter at the prompt. Type `n`, Enter to go to the next slide, or `p`, Enter,
-to go back.
+Type `n`, Enter to go to the next slide, or `p`, Enter, to go back.
 
-Type Ctrl+D to exit.
+Type Ctrl+D, or `q`, Enter, to exit.
